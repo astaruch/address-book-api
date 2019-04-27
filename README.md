@@ -1,5 +1,7 @@
 # Address book API
 
+[![Build Status](https://travis-ci.com/astaruch/address-book-api.svg?branch=master)](https://travis-ci.com/astaruch/address-book-api)
+
 The address book backend will be used for registering new accounts and managing their contacts.
 
 ## Requirements
@@ -20,7 +22,7 @@ The address book backend will be used for registering new accounts and managing 
 ## TODO
 - [ ] setup project
     - [ ] init project
-    - [ ] setup CI (+badge)
+    - [x] setup CI (+badge)
     - [ ] setup database
     - [ ] setup Heroku (+badge)
     - [ ] setup CD
