@@ -1,0 +1,38 @@
+{
+  "name": "address-book-api",
+  "version": "1.0.0",
+  "description": "The address book backend will be used for registering new accounts and managing their contacts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon",
+    "serve": "ts-node src/index.ts | pino-pretty",
+    "build": "tsc",
+    "lint": "eslint --ext js,ts,jsx,tsc  ./src"
+  },
+  "engines": {
+    "node": ">=8.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astaruch/address-book-api.git"
+  },
+  "author": "Andrej Staruch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/astaruch/address-book-api/issues"
+  },
+  "homepage": "https://github.com/astaruch/address-book-api#readme",
+  "devDependencies": {
+    "@strv/eslint-config-node": "^1.0.4",
+    "@strv/eslint-config-typescript": "^1.0.4",
+    "@types/node": "^11.13.8",
+    "@types/pino": "^5.8.6",
+    "eslint": "^5.16.0",
+    "nodemon": "^1.18.11",
+    "pino": "^5.12.3",
+    "pino-pretty": "^2.6.1",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  }
+}
