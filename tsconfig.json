@@ -19,11 +19,15 @@
      // Disallow features that require cross-file information for emit.
      "isolatedModules": true,
      // Import non-ES modules as default imports.
+     "allowSyntheticDefaultImports": true,
      "esModuleInterop": true,
-     "strictPropertyInitialization": false
+     "strictPropertyInitialization": false,
 
   },
   "include": [
-   "src"
+   "src/**/*"
+ ],
+ "files": [
+   "src/index.ts"
  ]
 }
