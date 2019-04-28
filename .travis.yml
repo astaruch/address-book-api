@@ -16,6 +16,8 @@ script:
 - npm run lint
 - npm run build
 - npm test
+after_success:
+- npm run coverage
 env:
   global:
   - NODE_ENV=test
