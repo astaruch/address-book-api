@@ -1,6 +1,6 @@
 import { Server } from 'net'
-import pino from 'pino'
 import Koa from 'koa'
+import { logger } from './utils/logger'
 import router from './routes/index'
 import * as config from './config'
 
@@ -9,11 +9,6 @@ const app = new Koa()
 
 app.use(router.routes())
 app.use(router.allowedMethods())
-
-const logger = pino({
-  name: 'address-book',
-  level: 'debug',
-})
 
 interface IServices {
   server: Server | null

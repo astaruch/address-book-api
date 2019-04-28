@@ -8,6 +8,7 @@
     "coverage": "nyc mocha -r ts-node/register src/**/test.ts tests --exit",
     "dev": "nodemon",
     "lint": "eslint --ext js,ts,jsx,tsc  ./src",
+    "lint-fix": "eslint --ext js,ts,jsx,tsc  ./src --fix",
     "serve": "ts-node src/app.ts | pino-pretty",
     "start": "node compiledJS/src/app.js",
     "test": "mocha -r ts-node/register src/**/test.ts tests --exit",
