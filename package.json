@@ -2,13 +2,16 @@
   "name": "address-book-api",
   "version": "1.0.0",
   "description": "The address book backend will be used for registering new accounts and managing their contacts.",
-  "main": "index.js",
+  "main": "compiledJS/src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon",
-    "serve": "ts-node src/app.ts | pino-pretty",
     "build": "tsc",
-    "lint": "eslint --ext js,ts,jsx,tsc  ./src"
+    "dev": "nodemon",
+    "lint": "eslint --ext js,ts,jsx,tsc  ./src",
+    "postinstall": "npm run build",
+    "serve": "ts-node src/app.ts | pino-pretty",
+    "start": "node compiledJS/src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-ts": "tsc -w"
   },
   "engines": {
     "node": ">=8.3.0"
@@ -23,24 +26,26 @@
     "url": "https://github.com/astaruch/address-book-api/issues"
   },
   "homepage": "https://github.com/astaruch/address-book-api#readme",
-  "devDependencies": {
-    "@strv/eslint-config-node": "^1.0.4",
-    "@strv/eslint-config-typescript": "^1.0.4",
+  "dependencies": {
     "@types/http-status-codes": "^1.2.0",
     "@types/koa": "^2.0.48",
     "@types/koa-bodyparser": "^4.2.2",
     "@types/koa-router": "^7.0.40",
     "@types/node": "^11.13.8",
     "@types/pino": "^5.8.6",
-    "eslint": "^5.16.0",
     "http-status-codes": "^1.3.2",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
-    "nodemon": "^1.18.11",
     "pino": "^5.12.3",
-    "pino-pretty": "^2.6.1",
-    "ts-node": "^8.1.0",
     "typescript": "^3.4.5"
+  },
+  "devDependencies": {
+    "@strv/eslint-config-node": "^1.0.4",
+    "@strv/eslint-config-typescript": "^1.0.4",
+    "eslint": "^5.16.0",
+    "nodemon": "^1.18.11",
+    "pino-pretty": "^2.6.1",
+    "ts-node": "^8.1.0"
   }
 }
