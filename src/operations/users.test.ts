@@ -1,4 +1,3 @@
-import { Context } from 'koa'
 import * as chai from 'chai'
 import { fakeUserMethods } from '../test'
 import { IUser } from '../database/models/user'
