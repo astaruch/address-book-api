@@ -1,34 +1,3 @@
-// {
-//   "compilerOptions": {
-//      "lib": [
-//         "es2018",
-//      ],
-//      "target": "esnext",
-//      "module": "commonjs",
-//      "outDir": "dist",
-//      "emitDecoratorMetadata": true,
-//      "experimentalDecorators": true,
-//      "sourceMap": true,
-//      "moduleResolution": "node",
-//      // Process & infer types from .js files.
-//      "allowJs": true,
-//      // Enable strictest settings like strictNullChecks & noImplicitAny.
-//      "strict": true,
-//      // Disallow features that require cross-file information for emit.
-//      "isolatedModules": true,
-//      // Import non-ES modules as default imports.
-//      "allowSyntheticDefaultImports": true,
-//      "esModuleInterop": true,
-//      "strictPropertyInitialization": false,
-//      "resolveJsonModule": true,
-//      "pretty": true,
-
-
-//   },
-//   // "include": ["src/**/*.ts"],
-//   "exclude": ["node_modules"],
-// }
-
 {
   "compilerOptions": {
       "module": "commonjs",

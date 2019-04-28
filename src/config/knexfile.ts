@@ -1,7 +1,8 @@
 import path from 'path'
 import config from './index'
 
-const knexfile = {
+
+export default {
   client: 'pg',
   connection: config.db.uri,
   pool: {
@@ -17,4 +18,3 @@ const knexfile = {
   },
 }
 
-export default knexfile

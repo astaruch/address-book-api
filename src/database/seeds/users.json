@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "email": "user.number.1@gmail.com",
+    "password": "$2b$10$PeDxa56jdeh93q.6YsO3hOBVsF3NWKG78Of7830XD0fufLYS7G8Va"
+  },
+  {
+    "id": 1,
+    "email": "anotheruser@gmail.com",
+    "password": "$2b$10$PeDxa56jdeh93q.6YsO3hOBVsF3NWKG78Of7830XD0fufLYS7G8Va"
+  },
+  {
+    "id": 2,
+    "email": "hello@seznam.cz",
+    "password": "$2b$10$PeDxa56jdeh93q.6YsO3hOBVsF3NWKG78Of7830XD0fufLYS7G8Va"
+  }
+]
