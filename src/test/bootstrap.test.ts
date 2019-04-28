@@ -1,4 +1,4 @@
-import { knex, start } from '../database/index'
+import { start } from '../database/index'
 
 
 describe('Test setup', () => {
