@@ -26,13 +26,13 @@ Application is running on [Heroku](https://strv-address-book-staruch-andr.heroku
 
 ## TODO
 - [ ] setup project
-    - [ ] init project
+    - [x] init project
     - [x] setup CI (+badge)
-    - [ ] setup database
+    - [x] setup database
     - [x] setup Heroku (+badge)
     - [x] setup CD
     - [ ] setup firebase
-    - [ ] setup test runner
+    - [x] setup test runner
 - [ ] user signup/login
 - [ ] add authentication
 - [ ] create contact
