@@ -7,14 +7,12 @@ branches:
   - master
   - develop
 install:
-- npm uninstall typescript --no-save
-- npm uninstall tslint --no-save
 - npm install
 before_script:
 - node make-build-info.js
 script:
 - npm run lint
-- npm build
+- npm run build
 cache:
   directories:
   - node_modules
@@ -27,4 +25,4 @@ deploy:
         - master
       repo: astaruch/address-book-api
     api_key:
-      secure: gzYp39kcrSZ8nwLvfjHU0a33zTMm+laNpIfzD8nCSiXzN1QyoYEpqs+DVaXDkUB2gXhcfxvxHMRXah5wwkotIZzM3kGxdDJysHXq7glic8awNTSCxyL4F7jVKiqSiFXyZepSttGPnq+SRMqHH9weq+czorF9TAV5ddOOy92Kvad5UoC/3K0RC0jbCtG6wbsZo2r/08HwTWPuWcnR/k/ABOMikb38neRBDBXZhkjeKGmesgs6NNru1722Ad3V9pMLfBLaL3c+CFmVkrn7POUWuY2DpvUEwxMAyoWxqsuuGCylUQ91TTty9HmXPireaT1j9tfO/+n8vwgjbIJCIxIG353WamLKSdVyJ947jjknnLd3hdleu/fWyHRTlQWrgukx4SbU+WLo0wTi7hZ5DKl15ydFWP9cAV2J5ZI1dyhMaO1L3v6rXr2ZLl6p0A8sYLmCDQmYY892abCAoDjdLWgzn+MCSJtAqruoSlDJDoh+WNy6rIoRb1h/hQic5Xv2cSUO0CRA+LKXa0WssHXeuTZibHjIFtvOazP87gM8QogMeUBswXiNbMrnpVV/TDwVp4sb5D7KIQWVMxk3DwmTw/ezNmtzj0Y9dLyDVwj7H68kYMYlYhYPspSsqogtmJVqM8MBIuPjUigUOlfUA1PmCwb6Vz2PO6GWrwMPjFZbwKpQqOM=
+      secure: MaDLHFgG3xj3GokYHg4FSzyT+5UPIv13z2gQThFW0fQtMGN8G8UYH6cWTP2LXpph5xiHfMa1u+9siVt/UAnSxFx4h1eC4z1F3edBXWsgMkUJL719d5StxFhLVIjGwwL3SjBBmtyZ2B50hozO9EkhNxLrDef57B0J69K4zWGmKjPpkz4xqqwXaMNeFL6l69I5PQFY2BnZWDp5gzF477fSqUCdOviSJKzZzoRwyrIg3YpNIhlU6COAQ5jg8AraEonwu6SCPFe2tu4Ex8q6iSRJzfuwqCTgsrqfn1BWMsHk7HPjSwB2NZg4BtZM83cEPLKXA5vsyZWDG3KSFILHImR/cPDcJQ5dNOKqHTW7RgNXDZjzZReScJfK1qWGkn8P5reKkiIcIQSS8xA9pa9Gb4W6dIv1BJ3wvW9B0Nz3JL5M06rSe3F2Yi3U+V3Jg/nSY3d1Nb/i727N63DUXXsL4ZweMpkyVpCqwrfEMqsSBYK3wYmo+p2DbtEXfOMKymJ55wwtL5Xun74G3o2YYHGiwPVGasmzoHTUqLZ7/ftNFAXr69wDdv8KIG13ZvLMt7ZFxxSr8gk665SKyzq5ogNBegmIlTohfcSnekQBh1sU1Fn+Xmwx0SA3wGjJBbgwMCri3hngai366HEM+bFRNMOi4fV0WnQ5MpsaNkWP7DBvh2MSrho=
