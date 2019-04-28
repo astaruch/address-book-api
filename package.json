@@ -7,7 +7,6 @@
     "build": "tsc",
     "dev": "nodemon",
     "lint": "eslint --ext js,ts,jsx,tsc  ./src",
-    "preinstall": "node make-build-info.js",
     "postinstall": "npm run build",
     "serve": "ts-node src/app.ts | pino-pretty",
     "start": "node compiledJS/src/app.js",
@@ -44,9 +43,12 @@
   "devDependencies": {
     "@strv/eslint-config-node": "^1.0.4",
     "@strv/eslint-config-typescript": "^1.0.4",
+    "@types/ramda": "^0.26.8",
+    "dotenv": "^7.0.0",
     "eslint": "^5.16.0",
     "nodemon": "^1.18.11",
     "pino-pretty": "^2.6.1",
+    "ramda": "^0.26.1",
     "ts-node": "^8.1.0"
   }
 }

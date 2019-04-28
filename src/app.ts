@@ -2,6 +2,7 @@ import { Server } from 'net'
 import pino from 'pino'
 import Koa from 'koa'
 import router from './routes/index'
+import * as config from './config'
 
 
 const app = new Koa()
@@ -24,7 +25,8 @@ const services: IServices = {
 
 const start = (): void => {
   logger.info('Starting app...')
-  services.server = app.listen(3000)
+  services.server = app.listen(config.server.port)
+  logger.info(`Listening on port ${config.server.port}`)
 }
 
 const stop = (): void => {

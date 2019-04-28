@@ -21,6 +21,9 @@ gitRevParse.stdout.on('data', commitHash => {
 
 gitRevParse.stderr.on('data', err => {
   console.log(`Error occurred: ${err}`)
+  fs.writeFileSync('./build-info.json', JSON.stringify({
+    env: 'production'.replace('\n', ''),
+  }, null, '\t'))
 })
 
 gitRevParse.on('close', code => {
