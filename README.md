@@ -1,8 +1,13 @@
 # Address book API
 
 [![Build Status](https://travis-ci.com/astaruch/address-book-api.svg?branch=master)](https://travis-ci.com/astaruch/address-book-api)
+[![Dependencies](https://david-dm.org/astaruch/address-book-api.svg)](https://david-dm.org/astaruch/address-book-api.svg)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=strv-address-book-staruch-andr)](https://heroku-badge.herokuapp.com/?app=strv-address-book-staruch-andr)
+
 
 The address book backend will be used for registering new accounts and managing their contacts.
+
+Application is running on [Heroku](https://strv-address-book-staruch-andr.herokuapp.com/).
 
 ## Requirements
 
@@ -24,8 +29,8 @@ The address book backend will be used for registering new accounts and managing 
     - [ ] init project
     - [x] setup CI (+badge)
     - [ ] setup database
-    - [ ] setup Heroku (+badge)
-    - [ ] setup CD
+    - [x] setup Heroku (+badge)
+    - [x] setup CD
     - [ ] setup firebase
     - [ ] setup test runner
 - [ ] user signup/login
