@@ -1,12 +1,20 @@
+import { Context } from 'koa'
 import { logger } from '../utils/logger'
 
 
-const login = (): void => {
-  logger.warn('TODO')
+const login = (ctx: Context): Promise<void> => {
+  logger.warn('TODO', ctx)
+  return Promise.resolve()
 }
 
-const signUp = (): void => {
-  logger.warn('TODO')
+const signUp = (ctx: Context): Promise<void> => {
+  logger.warn('TODO', ctx)
+  return Promise.resolve()
 }
 
-export { login, signUp }
+const getAll = (ctx: Context): Promise<void> => {
+  logger.warn('TODO', ctx)
+  return Promise.resolve()
+}
+
+export { login, signUp, getAll }

@@ -1,12 +1,20 @@
 import { logger } from '../utils/logger'
+import { IUser } from '../database/models/user'
 
-
-const login = (): void => {
-  logger.warn('TODO')
+interface ILoggedUser {
+  id: number
+  email: string
+  accessToken: string
 }
 
-const signUp = (): void => {
-  logger.warn('TODO')
+const login = (input: IUser): ILoggedUser => {
+  logger.warn('TODO', input)
+  return {} as ILoggedUser
 }
 
-export { login, signUp }
+const signUp = (input: IUser): ILoggedUser => {
+  logger.warn('TODO', input)
+  return {} as ILoggedUser
+}
+
+export { login, signUp, ILoggedUser }

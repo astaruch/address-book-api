@@ -72,7 +72,11 @@
   "devDependencies": {
     "@strv/eslint-config-node": "^1.0.4",
     "@strv/eslint-config-typescript": "^1.0.4",
+    "@types/chai": "^4.1.7",
+    "@types/chance": "^1.0.2",
     "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "chance": "^1.0.18",
     "eslint": "^5.16.0",
     "mocha": "^6.1.4",
     "nodemon": "^1.18.11",

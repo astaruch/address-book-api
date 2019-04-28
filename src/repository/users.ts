@@ -1,8 +1,6 @@
-import { logger } from '../utils/logger'
+import { QueryBuilder } from 'objection'
+import { User } from '../database/models/user'
 
-
-const create = (): void => {
-  logger.warn('TODO')
-}
+const create = (user: User): QueryBuilder<User, User, User> => User.query().insertAndFetch(user)
 
 export { create }
