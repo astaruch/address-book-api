@@ -7,8 +7,6 @@
     "build": "tsc",
     "dev": "nodemon",
     "lint": "eslint --ext js,ts,jsx,tsc  ./src",
-    "preinstall": "node make-build-info.js",
-    "postinstall": "npm run build",
     "serve": "ts-node src/app.ts | pino-pretty",
     "start": "node compiledJS/src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
