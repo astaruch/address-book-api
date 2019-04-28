@@ -17,6 +17,7 @@ cache:
   - node_modules
 deploy:
   - provider: heroku
+    skip_cleanup: true
     app:
       master: strv-address-book-staruch-andr
     on:
