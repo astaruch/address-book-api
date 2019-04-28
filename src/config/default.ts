@@ -1,6 +1,6 @@
 import * as pkg from '../../package.json'
 
-module.exports = (env: string): object => ({
+const genCfg = (env: string): object => ({
   env,
   appName: pkg.name,
   version: pkg.version,
@@ -27,3 +27,5 @@ module.exports = (env: string): object => ({
     },
   },
 })
+
+export default genCfg
