@@ -26,6 +26,11 @@ const genCfg = (env: string): object => ({
       maxAge: 3600,
     },
   },
+  db: {
+    uri: process.env.DB_URI ||
+      'postgres://postgres:password@localhost:5432/address-book-db'
+
+  }
 })
 
 export default genCfg

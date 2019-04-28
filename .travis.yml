@@ -8,10 +8,18 @@ branches:
 install:
 - npm install
 before_script:
+- sudo service postgresql stop
+- docker-compose up -d
+- docker ps
 - node make-build-info.js
 script:
 - npm run lint
 - npm run build
+- npm test
+env:
+  global:
+  - NODE_ENV=test
+  - DB_URI=postgres://postgres:password@localhost:5433:/address-book-db-tests
 cache:
   directories:
   - node_modules

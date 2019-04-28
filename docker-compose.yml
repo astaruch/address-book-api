@@ -1,0 +1,21 @@
+version: '3'
+services:
+  database:
+    image: postgres:11.2
+    container_name: address-book-db
+    environment:
+      POSTGRES_DB: address-book-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+
+  database_tests:
+    image: postgres:11.2
+    container_name: address-book-db-tests
+    environment:
+      POSTGRES_DB: address-book-db-tests
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5433:5432
