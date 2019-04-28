@@ -1,23 +1,30 @@
 language: node_js
-
 node_js:
-  - 'node'
-  - '8.15'
-
+- node
+- '8.15'
 branches:
   only:
   - master
   - develop
-
 install:
-  - npm uninstall typescript --no-save
-  - npm uninstall tslint --no-save
-  - npm install
-
+- npm uninstall typescript --no-save
+- npm uninstall tslint --no-save
+- npm install
+before_script:
+- node make-build-info.js
 script:
-  - npm run lint
-  - npm build
-
+- npm run lint
+- npm build
 cache:
   directories:
-    - node_modules
+  - node_modules
+deploy:
+  - provider: heroku
+    app:
+      master: strv-address-book-staruch-andr
+    on:
+      branch:
+        - master:
+      repo: astaruch/address-book-api
+    api_key:
+      secure: gzYp39kcrSZ8nwLvfjHU0a33zTMm+laNpIfzD8nCSiXzN1QyoYEpqs+DVaXDkUB2gXhcfxvxHMRXah5wwkotIZzM3kGxdDJysHXq7glic8awNTSCxyL4F7jVKiqSiFXyZepSttGPnq+SRMqHH9weq+czorF9TAV5ddOOy92Kvad5UoC/3K0RC0jbCtG6wbsZo2r/08HwTWPuWcnR/k/ABOMikb38neRBDBXZhkjeKGmesgs6NNru1722Ad3V9pMLfBLaL3c+CFmVkrn7POUWuY2DpvUEwxMAyoWxqsuuGCylUQ91TTty9HmXPireaT1j9tfO/+n8vwgjbIJCIxIG353WamLKSdVyJ947jjknnLd3hdleu/fWyHRTlQWrgukx4SbU+WLo0wTi7hZ5DKl15ydFWP9cAV2J5ZI1dyhMaO1L3v6rXr2ZLl6p0A8sYLmCDQmYY892abCAoDjdLWgzn+MCSJtAqruoSlDJDoh+WNy6rIoRb1h/hQic5Xv2cSUO0CRA+LKXa0WssHXeuTZibHjIFtvOazP87gM8QogMeUBswXiNbMrnpVV/TDwVp4sb5D7KIQWVMxk3DwmTw/ezNmtzj0Y9dLyDVwj7H68kYMYlYhYPspSsqogtmJVqM8MBIuPjUigUOlfUA1PmCwb6Vz2PO6GWrwMPjFZbwKpQqOM=
