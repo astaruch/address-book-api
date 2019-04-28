@@ -27,7 +27,7 @@ after_script:
 env:
   global:
   - NODE_ENV=test
-  - DB_URI=postgres://postgres:password@localhost:5433:/address-book-db-tests
+  - DB_URI=postgres://postgres:password@localhost:5433/address-book-db-tests
   - CC_TEST_REPORTER_ID=b0abd9f743bc8d89c5da5feba53c6dde54ca755e58befbe9c0d2f66379e34926
 cache:
   directories:

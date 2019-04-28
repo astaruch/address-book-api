@@ -30,7 +30,7 @@ const genCfg = (env: string): object => ({
     uri: process.env.DB_URI
       || 'postgres://postgres:password@localhost:5432/address-book-db',
 
-  }
+  },
 })
 
 export default genCfg
