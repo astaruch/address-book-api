@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.com/astaruch/address-book-api.svg?branch=master)](https://travis-ci.com/astaruch/address-book-api)
 [![Dependencies](https://david-dm.org/astaruch/address-book-api.svg)](https://david-dm.org/astaruch/address-book-api.svg)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ad6d3d3df924190db2cf/test_coverage)](https://codeclimate.com/github/astaruch/address-book-api/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ad6d3d3df924190db2cf/maintainability)](https://codeclimate.com/github/astaruch/address-book-api/maintainability)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=strv-address-book-staruch-andr)](https://heroku-badge.herokuapp.com/?app=strv-address-book-staruch-andr)
 
 
