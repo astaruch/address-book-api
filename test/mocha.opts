@@ -1,3 +1,8 @@
 --require ts-node/register
 --full-trace
+--file src/test/bootstrap.test.ts
+--ui bdd
+--slow 1000
+--timeout 2000
+--color true
 src/**/*.test.ts
