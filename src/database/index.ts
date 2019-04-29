@@ -1,9 +1,11 @@
 import { Model } from 'objection'
 import knexLib from 'knex'
 import knexfile from '../config/knexfile'
+import { logger } from '../utils/logger'
 
 const knex = knexLib(knexfile)
-const start = async (): Promise<void> => {
+const start = async (): Promise<knexLib> => {
+  logger.info('Starting database...')
   try {
     await knex.raw("SELECT 'testing connection';")
 
@@ -11,6 +13,8 @@ const start = async (): Promise<void> => {
   } catch (err) {
     throw err
   }
+  logger.info('Database is running.')
+  return knex
 }
 
 export { knex, start }

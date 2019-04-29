@@ -1,6 +1,28 @@
 import { QueryBuilder } from 'objection'
 import { User } from '../database/models/user'
+import * as errors from '../utils/errors'
+
 
 const create = (user: User): QueryBuilder<User, User, User> => User.query().insertAndFetch(user)
 
-export { create }
+const findById = async (id: number): Promise<User> => {
+  const user = await User.query().where('id', id).first()
+
+  if (!user) {
+    throw new errors.NotFoundError()
+  }
+
+  return user
+}
+
+const findByEmail = async (email: string): Promise<User> => {
+  const user = await User.query().where('email', email).first()
+
+  if (!user) {
+    throw new errors.NotFoundError()
+  }
+
+  return user
+}
+
+export { create, findById, findByEmail }

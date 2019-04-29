@@ -7,9 +7,9 @@ const assert = chai.assert
 const expect = chai.expect
 describe('Operations', () => {
   describe('Users', () => {
-    it('#login user', () => {
+    it('#login user', async () => {
       const userData = fakeUserMethods.createUserData() as IUser
-      const logged = users.login(userData)
+      const logged = await users.login(userData)
       expect(logged).has.property('accessToken')
       assert.notEqual(logged.accessToken, '')
     })

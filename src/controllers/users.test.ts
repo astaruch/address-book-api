@@ -23,6 +23,9 @@ describe('Controllers', () => {
       expect(logged).to.respondTo('then')
       const resolved = await logged
       assert.isObject(resolved)
+      assert.isNotEmpty(resolved.id)
+      assert.isNotEmpty(resolved.email)
+      assert.isNotEmpty(resolved.accessToken)
     })
 
     it('#signUp user', async () => {
@@ -39,6 +42,9 @@ describe('Controllers', () => {
       expect(newUser).to.respondTo('then')
       const resolved = await newUser
       assert.isObject(resolved)
+      assert.isNotEmpty(resolved.id)
+      assert.isNotEmpty(resolved.email)
+      assert.isNotEmpty(resolved.accessToken)
     })
 
     it('#getAll users', () => {
