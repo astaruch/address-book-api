@@ -5,13 +5,13 @@
   "main": "compiledJS/src/app.js",
   "scripts": {
     "build": "tsc",
-    "coverage": "nyc mocha -r ts-node/register src/**/test.ts tests --exit",
+    "coverage": "cross-env NODE_ENV=test nyc mocha -r ts-node/register src/**/*.test.ts --exit | pino-pretty",
     "dev": "nodemon",
     "lint": "eslint --ext js,ts,jsx,tsc  ./src",
     "lint-fix": "eslint --ext js,ts,jsx,tsc  ./src --fix",
     "serve": "ts-node src/app.ts | pino-pretty",
     "start": "node compiledJS/src/app.js",
-    "test": "mocha -r ts-node/register src/**/test.ts tests --exit",
+    "test": "cross-env NODE_ENV=test mocha -r ts-node/register src/**/*.test.ts --exit | pino-pretty",
     "watch-ts": "tsc -w"
   },
   "nyc": {
@@ -88,6 +88,7 @@
     "@types/mocha": "^5.2.6",
     "chai": "^4.2.0",
     "chance": "^1.0.18",
+    "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "mocha": "^6.1.4",
     "nodemon": "^1.18.11",
