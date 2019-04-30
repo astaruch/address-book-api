@@ -2,34 +2,23 @@ import { Context } from 'koa'
 import * as chai from 'chai'
 import { fakeUserMethods } from '../test'
 import { IUser } from '../database/models/user'
+import { logger } from '../utils/logger'
 import * as users from './users'
 
 const assert = chai.assert
-const expect = chai.expect
 
 describe('Controllers', () => {
   describe('Users', () => {
-    it('#login user', async () => {
-      const { email, password } = fakeUserMethods.createUserData() as IUser
-      const ctx = {
-        request: {
-          body: {
-            email,
-            password,
-          },
-        },
-      } as Context
-      const logged = users.login(ctx)
-      expect(logged).to.respondTo('then')
-      const resolved = await logged
-      assert.isObject(resolved)
-      assert.isNotEmpty(resolved.id)
-      assert.isNotEmpty(resolved.email)
-      assert.isNotEmpty(resolved.accessToken)
+    let email: string
+    let password: string
+
+    before(() => {
+      const user = fakeUserMethods.createUserData() as IUser
+      email = user.email
+      password = user.password
     })
 
     it('#signUp user', async () => {
-      const { email, password } = fakeUserMethods.createUserData() as IUser
       const ctx = {
         request: {
           body: {
@@ -38,19 +27,33 @@ describe('Controllers', () => {
           },
         },
       } as Context
-      const newUser = users.signUp(ctx)
-      expect(newUser).to.respondTo('then')
-      const resolved = await newUser
-      assert.isObject(resolved)
-      assert.isNotEmpty(resolved.id)
-      assert.isNotEmpty(resolved.email)
-      assert.isNotEmpty(resolved.accessToken)
+      await users.signUp(ctx)
+      logger.info(ctx)
+      assert.isNumber(ctx.body.id)
+      assert.isNotEmpty(ctx.body.email)
+      assert.isNotEmpty(ctx.body.accessToken)
     })
 
-    it('#getAll users', () => {
+    it('#login user', async () => {
+      const ctx = {
+        request: {
+          body: {
+            email,
+            password,
+          },
+        },
+      } as Context
+      await users.login(ctx)
+      assert.isNumber(ctx.body.id)
+      assert.isNotEmpty(ctx.body.email)
+      assert.isNotEmpty(ctx.body.accessToken)
+    })
+
+
+    it('#getAll users', async () => {
       const ctx = {} as Context
-      const allUsers = users.getAll(ctx)
-      assert.isArray(allUsers)
+      await users.getAll(ctx)
+      assert.isArray(ctx.body)
     })
   })
 })
