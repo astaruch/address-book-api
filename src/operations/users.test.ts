@@ -2,11 +2,9 @@ import * as chai from 'chai'
 import { fakeUserMethods } from '../test'
 import { IUser } from '../database/models/user'
 import { logger } from '../utils/logger'
-import { ConflictError } from '../utils/errors'
 import * as users from './users'
 
 const assert = chai.assert
-const expect = chai.expect
 describe('Operations', () => {
   describe('Users', () => {
     let user: IUser
