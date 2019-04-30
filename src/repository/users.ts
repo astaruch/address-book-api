@@ -25,4 +25,6 @@ const findByEmail = async (email: string): Promise<User> => {
   return user
 }
 
-export { create, findById, findByEmail }
+const findAll = (): Promise<User[]> => User.query()
+
+export { create, findById, findByEmail, findAll }

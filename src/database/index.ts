@@ -5,7 +5,7 @@ import { logger } from '../utils/logger'
 
 const knex = knexLib(knexfile)
 const start = async (): Promise<knexLib> => {
-  logger.info('Starting database...')
+  logger.info(`Starting database ${knexfile.connection}`)
   try {
     await knex.raw("SELECT 'testing connection';")
 

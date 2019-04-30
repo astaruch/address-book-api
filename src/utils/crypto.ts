@@ -9,14 +9,49 @@ const pepperify = (str: string): string => crypto
   .update(str)
   .digest('hex')
 
+// Defined in default config (section: config.auth)
+interface IJwtPayload {
+  userId?: number
+  iat?: number
+  exp?: number
+  iss?: string
+}
+
+interface IJsonWebTokenDecoded {
+  header?: object
+  payload?: IJwtPayload
+  signature?: object
+}
+
 const genenerateAccessToken = (userId: number): string => {
-  const payload = { userId }
+  const payload = { userId } as IJwtPayload
   return jwt.sign(payload, config.auth.secret, config.auth.createOptions)
 }
 
-const verifyAccessToken = (authToken: string): string | object => {
+const verifyAccessToken = (authToken: string): IJwtPayload => {
   try {
-    return jwt.verify(authToken, config.auth.secret, config.auth.verifyOptions)
+    const decoded: IJsonWebTokenDecoded | string = jwt
+      .verify(authToken, config.auth.secret, config.auth.verifyOptions)
+
+    let payload
+    if (typeof decoded === 'string') {
+      // check if we have JSON string
+      try {
+        const obj = JSON.parse(decoded)
+        if (obj !== null && typeof obj === 'object') {
+          payload = obj
+        }
+        return {} as IJwtPayload
+      } catch (err) {
+        return {} as IJwtPayload
+      }
+    } else {
+      payload = decoded
+    }
+    if (payload.payload) {
+      return payload.payload
+    }
+    return payload as IJwtPayload
   } catch (err) {
     if (err instanceof jwt.JsonWebTokenError || err instanceof SyntaxError) {
       logger.error(err)
@@ -32,4 +67,4 @@ const hashPassword = (password: string): Promise<string> =>
 const comparePassword = (plaintext: string, ciphertext: string): Promise<boolean> =>
   bcrypt.compare(pepperify(plaintext), ciphertext)
 
-export { genenerateAccessToken, verifyAccessToken, hashPassword, comparePassword }
+export { genenerateAccessToken, verifyAccessToken, hashPassword, comparePassword, IJwtPayload }

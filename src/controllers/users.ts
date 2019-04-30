@@ -1,33 +1,30 @@
 import { Context } from 'koa'
-import { logger } from '../utils/logger'
 import { validate } from '../validations'
 import * as schemas from '../validations/schemas/users'
 import * as operations from '../operations/users'
 
 
-const login = async (ctx: Context): Promise<operations.ILoggedUser> => {
+const login = async (ctx: Context): Promise<void> => {
   const input = {
     email: ctx.request.body.email,
     password: ctx.request.body.password,
   }
   validate(input, schemas.login)
   ctx.body = await operations.login(input)
-  return ctx.body
 }
 
-const signUp = async (ctx: Context): Promise<operations.ILoggedUser> => {
+const signUp = async (ctx: Context): Promise<void> => {
   const input = {
     email: ctx.request.body.email,
     password: ctx.request.body.password,
   }
   validate(input, schemas.signUp)
   ctx.body = await operations.signUp(input)
-  return ctx.body
 }
 
-const getAll = (ctx: Context): Promise<void> => {
-  logger.warn('TODO', ctx)
-  return Promise.resolve()
+const getAll = async (ctx: Context): Promise<void> => {
+  ctx.body = await operations.getAll()
 }
 
 export { login, signUp, getAll }
+

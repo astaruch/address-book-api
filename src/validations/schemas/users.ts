@@ -37,4 +37,18 @@ const signUp: Schema = {
   },
 }
 
-export { login, signUp }
+const token: Schema = {
+  type: 'string',
+}
+
+const jwtToken: Schema = {
+  type: 'Object',
+  required: [
+    'token',
+  ],
+  properties: {
+    token,
+  },
+}
+
+export { login, signUp, jwtToken }

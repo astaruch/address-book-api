@@ -33,7 +33,12 @@ Application is running on [Heroku](https://strv-address-book-staruch-andr.heroku
     - [x] setup CD
     - [ ] setup firebase
     - [x] setup test runner
-- [ ] user signup/login
-- [ ] add authentication
-- [ ] create contact
+- [x] user signup/login API
+    - [x] add tests
+    - [ ] fix tests
+- [x] add authentication
+    - [ ] add tests
+- [ ] create contact API
+    - [ ] add tests
+- [ ] overall API tests
 - [ ] test coverage >90% (+badge)
