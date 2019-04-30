@@ -1,3 +1,4 @@
+import * as path from 'path'
 import * as pkg from '../../package.json'
 
 const genCfg = (env: string): object => ({
@@ -44,6 +45,11 @@ const genCfg = (env: string): object => ({
       algorithm: 'HS256',
       issuer: `com.herokuapp.strv-address-book-staruch-andr.${env}`,
     },
+  },
+  firebase: {
+    databaseURL: 'https://strv-address-book-staruc-2e9d6.firebaseio.com',
+    serviceAccountFile: process.env.FIREBASE_SERVICE_ACOUNT
+      || path.join(__dirname, 'service-account-file.json'),
   },
 
 })
