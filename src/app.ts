@@ -30,11 +30,14 @@ const services: IServices = {
 }
 
 const start = async (): Promise<void> => {
+  logger.info(`Environment: ${config.env}`)
   logger.info('Starting app...')
 
   services.db = await database.start()
+
+  logger.info(`Opening listener on port ${config.server.port}`)
   services.server = app.listen(config.server.port)
-  logger.info(`Listening on port ${config.server.port}`)
+  logger.info('Listening')
 }
 
 const stop = (): void => {
