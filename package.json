@@ -48,6 +48,7 @@
   },
   "homepage": "https://github.com/astaruch/address-book-api#readme",
   "dependencies": {
+    "@types/ramda": "^0.26.8",
     "bcrypt": "^3.0.6",
     "dotenv": "^7.0.0",
     "firebase-admin": "^7.3.0",
@@ -65,10 +66,10 @@
     "pino": "^5.12.3",
     "pino-pretty": "^2.6.1",
     "ramda": "^0.26.1",
-    "typescript": "^3.4.5",
-    "util": "^0.11.1",
     "ts-node": "^8.1.0",
-    "ts-node-register": "^1.0.0"
+    "ts-node-register": "^1.0.0",
+    "typescript": "^3.4.5",
+    "util": "^0.11.1"
   },
   "devDependencies": {
     "@strv/eslint-config-node": "^1.0.4",
@@ -89,7 +90,6 @@
     "@types/node": "^11.13.8",
     "@types/pg": "^7.4.14",
     "@types/pino": "^5.8.6",
-    "@types/ramda": "^0.26.8",
     "chai": "^4.2.0",
     "chance": "^1.0.18",
     "cross-env": "^5.2.0",
