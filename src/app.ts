@@ -1,13 +1,13 @@
-import { Server } from 'net'
 import Koa from 'koa'
 import koaBody from 'koa-bodyparser'
 import koaCompress from 'koa-compress'
 import koaCors from 'kcors'
-import Knex from 'knex'
 import { logger } from './utils/logger'
 import router from './routes/index'
 import * as config from './config'
-import * as database from './database'
+import * as appDb from './database'
+import * as firebaseDb from './database/firebase'
+import { IServices } from './@types'
 
 
 const app = new Koa()
@@ -19,21 +19,18 @@ app.use(koaBody())
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-interface IServices {
-  server: Server | null
-  db: Knex | null
-}
-
 const services: IServices = {
   server: null,
-  db: null,
+  appDb: null,
 }
 
 const start = async (): Promise<void> => {
   logger.info(`Environment: ${config.env}`)
   logger.info('Starting app...')
 
-  services.db = await database.start()
+  services.appDb = await appDb.start()
+
+  firebaseDb.init()
 
   logger.info(`Opening listener on port ${config.server.port}`)
   services.server = app.listen(config.server.port)
@@ -45,8 +42,8 @@ const stop = (): void => {
   if (services.server) {
     services.server.close()
   }
-  if (services.db) {
-    services.db.destroy(() => logger.info('Closing db...'))
+  if (services.appDb) {
+    services.appDb.destroy(() => logger.info('Closing db...'))
   }
 }
 

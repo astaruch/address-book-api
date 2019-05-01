@@ -3,3 +3,4 @@ build-info.json
 compiledJS
 coverage
 .nyc_output
+src/config/service-account-file.json

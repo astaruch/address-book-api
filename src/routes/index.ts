@@ -1,6 +1,7 @@
 import Router from 'koa-router'
 import { root } from '../controllers/root'
 import * as users from '../controllers/users'
+import * as contacts from '../controllers/contacts'
 import { authenticate } from '../middleware/authentication'
 import { handleErrors, handleNotFound } from '../middleware/errors'
 
@@ -15,6 +16,9 @@ router.post('/users', users.signUp)
 // eslint-disable-next-line no-warning-comments
 // TODO: delete next route before sending the project. This is security issue
 router.get('/users', authenticate, users.getAll)
+
+router.post('/contacts', authenticate, contacts.create)
+router.get('/contacts', authenticate, contacts.getAll)
 
 router.use(handleNotFound)
 
