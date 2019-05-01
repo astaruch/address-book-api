@@ -41,3 +41,5 @@ deploy:
       repo: astaruch/address-book-api
     api_key:
       secure: MaDLHFgG3xj3GokYHg4FSzyT+5UPIv13z2gQThFW0fQtMGN8G8UYH6cWTP2LXpph5xiHfMa1u+9siVt/UAnSxFx4h1eC4z1F3edBXWsgMkUJL719d5StxFhLVIjGwwL3SjBBmtyZ2B50hozO9EkhNxLrDef57B0J69K4zWGmKjPpkz4xqqwXaMNeFL6l69I5PQFY2BnZWDp5gzF477fSqUCdOviSJKzZzoRwyrIg3YpNIhlU6COAQ5jg8AraEonwu6SCPFe2tu4Ex8q6iSRJzfuwqCTgsrqfn1BWMsHk7HPjSwB2NZg4BtZM83cEPLKXA5vsyZWDG3KSFILHImR/cPDcJQ5dNOKqHTW7RgNXDZjzZReScJfK1qWGkn8P5reKkiIcIQSS8xA9pa9Gb4W6dIv1BJ3wvW9B0Nz3JL5M06rSe3F2Yi3U+V3Jg/nSY3d1Nb/i727N63DUXXsL4ZweMpkyVpCqwrfEMqsSBYK3wYmo+p2DbtEXfOMKymJ55wwtL5Xun74G3o2YYHGiwPVGasmzoHTUqLZ7/ftNFAXr69wDdv8KIG13ZvLMt7ZFxxSr8gk665SKyzq5ogNBegmIlTohfcSnekQBh1sU1Fn+Xmwx0SA3wGjJBbgwMCri3hngai366HEM+bFRNMOi4fV0WnQ5MpsaNkWP7DBvh2MSrho=
+    run:
+    - knex migrate:latest --cwd ./src/database --knexfile ./src/config/knexfile.ts
