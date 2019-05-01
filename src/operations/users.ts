@@ -1,23 +1,10 @@
 import { logger } from '../utils/logger'
-import { IUser, User } from '../database/models/user'
+import { User } from '../database/models/user'
 import * as userRepository from '../repository/users'
 import * as errors from '../utils/errors'
 import * as crypto from '../utils/crypto'
+import { IUser, ILoggedUser, IJwtToken, IAccessToken } from '../@types'
 
-interface ILoggedUser {
-  id: number
-  email: string
-  accessToken: string
-}
-
-interface IJwtToken {
-  token: string
-}
-
-interface IAccessToken {
-  user: User
-  loginTimeout: number
-}
 
 const login = async (input: IUser): Promise<ILoggedUser> => {
   logger.info(`Login for user ${input.email} has started.`)
@@ -100,4 +87,4 @@ const verifyTokenPayload = async (input: IJwtToken): Promise<IAccessToken> => {
 
 const getAll = (): Promise<User[]> => userRepository.findAll()
 
-export { login, signUp, verifyTokenPayload, ILoggedUser, IJwtToken, getAll }
+export { login, signUp, verifyTokenPayload, getAll }

@@ -1,8 +1,8 @@
 import { Context } from 'koa'
 import * as chai from 'chai'
 import { fakeUserMethods } from '../test'
-import { IUser } from '../database/models/user'
 import { logger } from '../utils/logger'
+import { IUser } from '../@types';
 import * as users from './users'
 
 const assert = chai.assert

@@ -3,6 +3,7 @@ import { UnauthorizedError } from '../utils/errors'
 import { validate } from '../validations'
 import * as userSchemas from '../validations/schemas/users'
 import * as userOperations from '../operations/users'
+import { IJwtToken } from '../@types'
 
 
 const authenticate = async (ctx: Context, next: Function): Promise<Function> => {
@@ -11,7 +12,7 @@ const authenticate = async (ctx: Context, next: Function): Promise<Function> => 
   }
 
   const token = ctx.header.authorization
-  const input = {} as userOperations.IJwtToken
+  const input = {} as IJwtToken
   if (token.startsWith('Bearer ')) {
     input.token = token.slice(7, token.length).trimLeft()
   } else {

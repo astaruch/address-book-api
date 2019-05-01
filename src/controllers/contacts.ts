@@ -5,6 +5,7 @@ import { validate } from '../validations'
 import * as schemas from '../validations/schemas/contacts'
 import { logger } from '../utils/logger'
 import * as operations from '../operations/contacts'
+import { IContact } from '../@types'
 
 const create = async (ctx: Context): Promise<void> => {
   const input = {
@@ -12,7 +13,7 @@ const create = async (ctx: Context): Promise<void> => {
     name: ctx.request.body.name,
     number: ctx.request.body.number,
     owner: ctx.state.user.id,
-  } as operations.IContact
+  } as IContact
   validate(input, schemas.contact)
   ctx.body = await operations.create(input)
   ctx.status = httpStatusCodes.CREATED

@@ -1,9 +1,5 @@
 import { Model } from 'objection'
 
-interface IUser {
-  email: string
-  password: string
-}
 
 class User extends Model {
   public id: number
@@ -15,4 +11,4 @@ class User extends Model {
   }
 }
 
-export { User, IUser }
+export { User }

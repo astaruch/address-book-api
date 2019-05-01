@@ -1,10 +1,6 @@
 import admin from 'firebase-admin'
-import { IContact } from '../operations/contacts'
 import * as errors from '../utils/errors'
-
-interface IFirebaseContact {
-  [x: string]: IContact
-}
+import { IFirebaseContact, IContact } from '../@types'
 
 const create = (contact: IContact): IFirebaseContact => {
   const ref = admin.database().ref('contacts')
@@ -15,5 +11,5 @@ const create = (contact: IContact): IFirebaseContact => {
   return { [newContact.key]: contact }
 }
 
-export { create, IFirebaseContact }
+export { create }
 

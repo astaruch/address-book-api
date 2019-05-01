@@ -2,6 +2,7 @@ import crypto from 'crypto'
 import * as jwt from 'jsonwebtoken'
 import * as bcrypt from 'bcrypt'
 import * as config from '../config'
+import { IJwtPayload, IJsonWebTokenDecoded } from '../@types'
 import { logger } from './logger'
 
 const pepperify = (str: string): string => crypto
@@ -10,18 +11,7 @@ const pepperify = (str: string): string => crypto
   .digest('hex')
 
 // Defined in default config (section: config.auth)
-interface IJwtPayload {
-  userId?: number
-  iat?: number
-  exp?: number
-  iss?: string
-}
 
-interface IJsonWebTokenDecoded {
-  header?: object
-  payload?: IJwtPayload
-  signature?: object
-}
 
 const genenerateAccessToken = (userId: number): string => {
   const payload = { userId } as IJwtPayload
