@@ -1,7 +1,7 @@
 import * as chai from 'chai'
 import { fakeUserMethods } from '../test'
 import { logger } from '../utils/logger'
-import { IUser } from '../@types';
+import { IUser } from '../@types'
 import * as users from './users'
 
 const assert = chai.assert
