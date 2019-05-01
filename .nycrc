@@ -10,6 +10,7 @@
   ],
   "exclude": [
     "src/config",
-    "src/database"
+    "src/database",
+    "**/*.d.ts"
   ]
 }
