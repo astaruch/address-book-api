@@ -153,6 +153,16 @@ class InternalServerError extends AppError {
   }
 }
 
+class ExternalServiceError extends AppError {
+  public constructor(message?: string) {
+    super(
+      message || 'An error ocurred during contacting an external service',
+      'SERVICE_UNAVAILABLE',
+      httpStatusCodes.SERVICE_UNAVAILABLE,
+    )
+  }
+}
+
 export {
   AppError,
   ValidationError,
@@ -161,4 +171,5 @@ export {
   IdleTimeoutError,
   ConflictError,
   InternalServerError,
+  ExternalServiceError,
 }

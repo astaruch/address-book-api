@@ -27,4 +27,17 @@ const findByEmail = async (email: string): Promise<User> => {
 
 const findAll = (): Promise<User[]> => User.query()
 
-export { create, findById, findByEmail, findAll }
+const addContact = async (userId: number, contactId: string): Promise<User> => {
+  const knexQuery = User.knexQuery()
+  const knexRaw = User.knex()
+
+  const user = await knexQuery
+    .where('id', userId)
+    .update({
+      contacts: knexRaw.raw('array_append(contacts, ?)', [contactId]),
+    })
+
+  return user
+}
+
+export { create, findById, findByEmail, findAll, addContact }
