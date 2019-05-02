@@ -44,16 +44,8 @@ describe('Controllers', () => {
         },
       } as Context
       await users.login(ctx)
-      assert.isNumber(ctx.body.id)
       assert.isNotEmpty(ctx.body.email)
       assert.isNotEmpty(ctx.body.accessToken)
-    })
-
-
-    it('#getAll users', async () => {
-      const ctx = {} as Context
-      await users.getAll(ctx)
-      assert.isArray(ctx.body)
     })
   })
 })

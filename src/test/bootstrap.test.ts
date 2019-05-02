@@ -1,6 +1,7 @@
 import { MigratorConfig } from 'knex'
 import { knex, start } from '../database/index'
 import knexfile from '../config/knexfile'
+import * as firebaseDb from '../database/firebase'
 
 
 describe('Test setup', () => {
@@ -14,6 +15,10 @@ describe('Test setup', () => {
 
     it('successfully starts connection to db', async () => {
       await start()
+    })
+
+    it('stats firebase service', () => {
+      firebaseDb.init()
     })
   })
 })

@@ -53,3 +53,5 @@ process.once('SIGTERM', () => stop())
 if (require.main === module) {
   start()
 }
+
+export = app
