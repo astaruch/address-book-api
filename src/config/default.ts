@@ -48,7 +48,7 @@ const genCfg = (env: string): object => ({
   },
   firebase: {
     databaseURL: 'https://strv-address-book-staruc-2e9d6.firebaseio.com',
-    serviceAccountFile: process.env.FIREBASE_SERVICE_ACOUNT,
+    serviceAccountFile: process.env.FIREBASE_SERVICE_ACCOUNT,
     serviceAccountFilePath: path.join(__dirname, 'service-account-file.json'),
   },
 
