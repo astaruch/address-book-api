@@ -14,6 +14,8 @@ const create = async (ctx: Context): Promise<void> => {
     number: ctx.request.body.number,
     owner: ctx.state.user.id,
   } as IContact
+  logger.info('POST /contacts')
+  logger.info(input)
   validate(input, schemas.contact)
   ctx.body = await operations.create(input)
   ctx.status = httpStatusCodes.CREATED

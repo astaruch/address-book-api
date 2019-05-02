@@ -16,8 +16,7 @@ const resetDb = async (): Promise<void> => {
     .filter((tablename: string) => !ignoreTableNames.includes(tablename))
     .map((tablename: string) => `"${tablename}"`)
 
-  logger.info(tableNames)
-  logger.info(names)
+  logger.debug(tableNames)
 
   if (names && names.length) {
     // RESTART IDENTITY

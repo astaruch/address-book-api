@@ -5,13 +5,13 @@ import { logger } from '../utils/logger'
 
 const init = (): void => {
   logger.info('Initializing firebase database')
-  logger.info(`-  database URL: ${config.firebase.databaseURL}`)
+  logger.info(`Database URL: ${config.firebase.databaseURL}`)
   let serviceAccount
   if (config.firebase.serviceAccountFile) {
     serviceAccount = JSON.parse(config.firebase.serviceAccountFile)
-    logger.info(`-  service acount file: ${serviceAccount}`)
+    logger.info('Using service account file from $FIREBASE_SERVICE_ACCOUNT variable')
   } else {
-    logger.info(`-  service account path: ${config.firebase.serviceAccountFilePath}`)
+    logger.info(`Firebase service account file path: ${config.firebase.serviceAccountFilePath}`)
     // eslint-disable-next-line no-sync
     serviceAccount = JSON.parse(fs.readFileSync(config.firebase.serviceAccountFilePath).toString())
   }

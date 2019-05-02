@@ -1,7 +1,6 @@
 import { Context } from 'koa'
 import * as chai from 'chai'
 import { fakeUserMethods } from '../test'
-import { logger } from '../utils/logger'
 import { IUser } from '../@types'
 import * as users from './users'
 
@@ -28,7 +27,6 @@ describe('Controllers', () => {
         },
       } as Context
       await users.signUp(ctx)
-      logger.info(ctx)
       assert.isNumber(ctx.body.id)
       assert.isNotEmpty(ctx.body.email)
       assert.isNotEmpty(ctx.body.accessToken)

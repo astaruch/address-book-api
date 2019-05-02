@@ -4,9 +4,11 @@ import { validate } from '../validations'
 import * as userSchemas from '../validations/schemas/users'
 import * as userOperations from '../operations/users'
 import { IJwtToken } from '../@types'
+import { logger } from '../utils/logger';
 
 
 const authenticate = async (ctx: Context, next: Function): Promise<Function> => {
+  logger.info('Checking JWT token')
   if (!ctx.header.authorization) {
     throw new UnauthorizedError()
   }

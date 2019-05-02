@@ -4,7 +4,8 @@ import * as userRepository from '../repository/users'
 import { IContact, IFirebaseContact } from '../@types'
 
 const create = async (input: IContact): Promise<IFirebaseContact> => {
-  logger.info(`Creating new contact: ${input}`)
+  logger.info('Creating new contact. Input:')
+  logger.info(input)
   const newContact = contactRepository.create(input)
   const userId = input.owner
   const contactId = Object.keys(newContact)[0]
