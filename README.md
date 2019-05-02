@@ -26,8 +26,38 @@ Application is running on [Heroku](https://strv-address-book-staruch-andr.heroku
 - tests
 - it's not needed to implement GET/UPDATE/DELETE
 
+## Development setup
+
+There are several problems with Typescript+knex compatibility and Node+bcrypt version. Right now, working versions are:
+- knex@0.15.2 - [issue](https://github.com/tgriesser/knex/issues/2998)
+- Node v10.12.0 + bcrypt@3.0.6 - [info](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)
+
+#### Steps
+
+    $ cd address-book-api
+    $ docker-compose up -d
+    $ npm install
+
+    # Prepare json for root route
+    $ node make-build-info.js
+
+    $ # Code quality tools
+    $ npm run lint
+    $ npm run coverage
+
+    $ # Prepare database
+    $ npm run migrate
+
+    $ # Start development Typescript server with reloading after file change
+    $ npm run dev
+
+    $ # Start production server
+    $ npm run build
+    $ npm start
+
+
 ## TODO
-- [ ] setup project
+- [x] setup project
     - [x] init project
     - [x] setup CI (+badge)
     - [x] setup database
