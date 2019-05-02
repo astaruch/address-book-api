@@ -13,7 +13,7 @@ Application is running on [Heroku](https://strv-address-book-staruch-andr.heroku
 
 ## Requirements
 
-- continues integration (Travis/Heroku/Jenkins)
+- continuous integration (Travis/Heroku/Jenkins)
 - deploy (Heroku/AWS ECS/AWS EC2)
 - Node.js + Koa/Express
 - HTTP responses following best practices
@@ -33,7 +33,8 @@ There are several problems with Typescript+knex compatibility and Node+bcrypt ve
 - Node v10.12.0 + bcrypt@3.0.6 - [info](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)
 
 > Firebase credentials
-Download firebase credentials ([docs](https://firebase.google.com/docs/admin/setup?authuser=0#initialize_the_sdk)) and store it into `address-book-api/src/config/service-account-file.json` or on production server store it in environmental variable $FIREBASE_SERVICE_ACOUNT. 
+
+Download firebase credentials ([docs](https://firebase.google.com/docs/admin/setup?authuser=0#initialize_the_sdk)) and store it into `address-book-api/src/config/service-account-file.json` or on production server store it in environmental variable $FIREBASE_SERVICE_ACOUNT.
 
 #### Steps
 
