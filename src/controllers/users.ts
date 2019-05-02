@@ -1,4 +1,5 @@
 import { Context } from 'koa'
+import * as httpStatusCodes from 'http-status-codes'
 import { validate } from '../validations'
 import * as schemas from '../validations/schemas/users'
 import * as operations from '../operations/users'
@@ -20,6 +21,7 @@ const signUp = async (ctx: Context): Promise<void> => {
   }
   validate(input, schemas.signUp)
   ctx.body = await operations.signUp(input)
+  ctx.status = httpStatusCodes.CREATED
 }
 
 const getAll = async (ctx: Context): Promise<void> => {
