@@ -32,6 +32,9 @@ There are several problems with Typescript+knex compatibility and Node+bcrypt ve
 - knex@0.15.2 - [issue](https://github.com/tgriesser/knex/issues/2998)
 - Node v10.12.0 + bcrypt@3.0.6 - [info](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)
 
+> Firebase credentials
+Download firebase credentials ([docs](https://firebase.google.com/docs/admin/setup?authuser=0#initialize_the_sdk)) and store it into `address-book-api/src/config/service-account-file.json` or on production server store it in environmental variable $FIREBASE_SERVICE_ACOUNT. 
+
 #### Steps
 
     $ cd address-book-api
