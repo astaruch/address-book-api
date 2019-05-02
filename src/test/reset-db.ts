@@ -4,8 +4,8 @@ import { logger } from '../utils/logger'
 const query = "SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname='public';"
 
 const ignoreTableNames = [
-  'migrations',
-  'migrations_lock',
+  'knex_migrations',
+  'knex_migrations_lock',
 ]
 
 const resetDb = async (): Promise<void> => {
