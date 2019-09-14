@@ -36,7 +36,9 @@ There are several problems with Typescript+knex compatibility and Node+bcrypt ve
 
 Download firebase credentials ([docs](https://firebase.google.com/docs/admin/setup?authuser=0#initialize_the_sdk)) and store it into `address-book-api/src/config/service-account-file.json` or on production server store it in environmental variable $FIREBASE_SERVICE_ACOUNT.
 
-## VS Code remarks
+## Usefull tools
+
+### VS Code
 
 To have a convenient development in VS Code, following extensions with these settings are recommended:
 - ESLint
@@ -50,8 +52,25 @@ To have a convenient development in VS Code, following extensions with these set
     ],
     "eslint.autoFixOnSave": true
 ```
-- Docker
+- Docker 
 - GitLens
+- PostgreSQL - used for quick selects and checks for dockerized db
+
+### [pgAdmin](https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html)
+```
+$ docker pull dpage/pgadmin4
+$ docker run -p 80:80 \
+    -e "PGADMIN_DEFAULT_EMAIL=user@domain.com" \
+    -e "PGADMIN_DEFAULT_PASSWORD=SuperSecret" \
+    -d dpage/pgadmin4
+```
+
+### Postman
+
+```
+$ sudo snap install postman
+```
+
 
 #### Steps
 
