@@ -36,6 +36,23 @@ There are several problems with Typescript+knex compatibility and Node+bcrypt ve
 
 Download firebase credentials ([docs](https://firebase.google.com/docs/admin/setup?authuser=0#initialize_the_sdk)) and store it into `address-book-api/src/config/service-account-file.json` or on production server store it in environmental variable $FIREBASE_SERVICE_ACOUNT.
 
+## VS Code remarks
+
+To have a convenient development in VS Code, following extensions with these settings are recommended:
+- ESLint
+
+```
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        { "language": "typescript", "autoFix": true },
+        { "language": "typescriptreact", "autoFix": true }
+    ],
+    "eslint.autoFixOnSave": true
+```
+- Docker
+- GitLens
+
 #### Steps
 
     $ cd address-book-api
