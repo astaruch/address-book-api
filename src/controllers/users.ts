@@ -3,7 +3,7 @@ import * as httpStatusCodes from 'http-status-codes'
 import { validate } from '../validations'
 import * as schemas from '../validations/schemas/users'
 import * as operations from '../operations/users'
-import { logger } from '../utils/logger';
+import { logger } from '../utils/logger'
 
 
 const login = async (ctx: Context): Promise<void> => {
